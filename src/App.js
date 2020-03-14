@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useReducer } from 'react';
 import './App.css';
+import Reestr from './component/reestr';
+
+export const MContext = React.createContext(null)
 
 function App() {
+
+const initialState = {name:['Jopa'], inputValue:''}
+const Mreducer = (state,action) => {
+
+  switch (action.type){
+
+    case 'insertInputValue': {
+      return {
+        ...state,
+        inputValue: action.value
+      }
+    }
+
+    default:
+      return state;
+  }
+
+}
+
+const [state, dispatch] = useReducer(Mreducer, initialState)
+
   return (
+    <MContext.Provider
+    value={{state,dispatch}}
+    >
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Reestr />
     </div>
+    </MContext.Provider>
   );
 }
 
