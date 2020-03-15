@@ -15,17 +15,26 @@
   background-color: #f5f5f5;
   height: 45px;
   align-items: center;
-
+  height: 60px;
   box-shadow: 0 0 1px;
   margin-bottom: 8px;
   margin-top: 8px;
 }
+
+.active {
+  
+  background-color: #8f918f;
+}
 .block span {
   margin-left: 5px;
 }
+.active span {
+
+  color: white;
+}
 
 .scoring {
-  top: 25%;
+  top: 30%;
   margin-right: 5px;
   width: 80px;
   border-radius: 5px;
@@ -39,7 +48,7 @@
   user-select: none;
 }
 .scoring-active {
-  top: 25%;
+  top: 30%;
   width: 80px;
 
   background-color: white;
@@ -69,7 +78,7 @@
 
 .program {
   user-select: none;
-  top: 25%;
+  top: 30%;
   width: 90px;
   border-radius: 5px;
   background-color: white;
@@ -87,7 +96,7 @@
 }
 .program-active{
   user-select: none;
-  top: 25%;
+  top: 30%;
   width: 90px;
   border-radius: 5px;
   background-color: white;
@@ -116,6 +125,3 @@
   margin-top: 3px;
 }
 
-.block .span-active {
-  text-decoration: line-through;
-}

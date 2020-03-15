@@ -20,9 +20,9 @@ const Reestr = props => {
 
 
   let newarry = state.array.map(el =>
-    <div className='block' >
+    <div className={`block${el.checkedki&el.checkedDM&el.checkedFSSP&el.checkedNDFL&el.checkedTK&el.checkedPP ? ' active' : ''}`}> 
 
-      <div><span  className={`span${el.checkedki&el.checkedDM&el.checkedFSSP&el.checkedNDFL&el.checkedTK ? '-active' : ''}`}> {el.name} </span> </div>
+      <div><span>   {el.name} </span> </div>
       <div className='wrapper'>
         <div onClick={() => dispatch({ type: 'setScoring', id: el.id })} className={`scoring${el.toggle ? '-active' : ''}`}  >{el.scoring}
           <div onClick={() => dispatch({ type: 'changeScoring', value: el.fps, id: el.id })} className={`unscoring${el.toggle ? '-active' : ''}`}> {el.fps} </div>
