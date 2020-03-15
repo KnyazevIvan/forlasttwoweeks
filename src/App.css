@@ -7,8 +7,8 @@
   width: 800px;
 }
 .block {
-  right: 5%;
-  width: 110%;
+  right: 17%;
+  width: 134%;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -26,11 +26,12 @@
 
 .scoring {
   top: 25%;
+  margin-right: 5px;
   width: 80px;
   border-radius: 5px;
   background-color: white;
   box-shadow: 0 0 2px;
-  margin-left: 25%;
+
   position: absolute;
   flex-wrap: wrap;
   cursor: pointer;
@@ -40,10 +41,10 @@
 .scoring-active {
   top: 25%;
   width: 80px;
-  border-radius: 5px;
+
   background-color: white;
   box-shadow: 0 0 10px;
-  margin-left: 25%;
+  border-radius: 5px;
   position: absolute;
   flex-wrap: wrap;
   cursor: pointer;
@@ -73,11 +74,16 @@
   border-radius: 5px;
   background-color: white;
   box-shadow: 0 0 2px;
-  margin-left: 36%;
+
   position: absolute;
   flex-wrap: wrap;
   cursor: pointer;
   z-index: 1;
+}
+
+.wrapper {
+ margin-right: 80px;
+ 
 }
 .program-active{
   user-select: none;
@@ -86,18 +92,30 @@
   border-radius: 5px;
   background-color: white;
   box-shadow: 0 0 10px;
-  margin-left: 36%;
+  
   position: absolute;
   flex-wrap: wrap;
   cursor: pointer;
   z-index: 5;
 }
-
-
 .material-icons {
   cursor: pointer;
   margin-right: 5px;
 }
-label {
+
+.inputSpan {
+
   
+  margin-top: 3px;
+}
+
+
+.inputSpan-active {
+  color: silver;
+  
+  margin-top: 3px;
+}
+
+.block .span-active {
+  text-decoration: line-through;
 }

@@ -60,7 +60,10 @@ const Mreducer = (state,action) => {
         ok2:'Все ОК',
         checkedki:false,
         checkedFSSP:false,
-        checkedDM: false
+        checkedDM: false,
+        checkedPP: false,
+        checkedNDFL: false,
+        checkedTK: false
 
       }
       return {
@@ -92,9 +95,9 @@ const Mreducer = (state,action) => {
         array: state.array.map(el=>{
           if (el.id===action.id)
           {
-            return {...el,toggle:!el.toggle}
+            return {...el,toggle:!el.toggle, toggle2:false}
           }
-          return el
+          return {...el, toggle:false, toggle2:false}
         })
       }
   
@@ -118,9 +121,9 @@ const Mreducer = (state,action) => {
         array: state.array.map(el=>{
           if (el.id===action.id)
           {
-            return {...el,toggle2:!el.toggle2}
+            return {...el,toggle2:!el.toggle2, toggle:false}
           }
-          return el
+          return {...el, toggle:false, toggle2:false}
         })
       }
     }
@@ -169,6 +172,42 @@ const Mreducer = (state,action) => {
           if (el.id===action.id)
           {
             return {...el, checkedDM:!el.checkedDM}
+          }
+          return el
+        })
+      }
+    }
+    case 'changeCheckedPP': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, checkedPP:!el.checkedPP}
+          }
+          return el
+        })
+      }
+    }
+    case 'changeCheckedNDFL': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, checkedNDFL:!el.checkedNDFL}
+          }
+          return el
+        })
+      }
+    }
+    case 'changeCheckedTK': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, checkedTK:!el.checkedTK}
           }
           return el
         })
