@@ -10,7 +10,7 @@ function App() {
 
 
 
-const initialState = {array:[{name:'Jopa', id:0}], inputValue:''}
+const initialState = {array:[{name:'', toggle:false, id:0,scoring:'Скоринг', fps:'FPS',ok: 'Всё OK',qcc:'QCC2',ki:'Нет КИ', toggle2:false, ok2:'Все ОК',refinance:'Рефинанс', program:'Программа'}], inputValue:'', checkedki:false, checkedFSSP:false, checkedDM:false}
 
 
 
@@ -47,7 +47,20 @@ const Mreducer = (state,action) => {
 
       let value = {
         name: state.inputValue,
-        id : Date.now()
+        id : Date.now(),
+        scoring: 'Скоринг',
+        fps:'FPS',
+        qcc: 'QCC2',
+        ok: 'Всё ОК',
+        toggle: false,
+        toggle:false,
+        ki: 'Нет КИ',
+        program:'Программа',
+        refinance:'Рефинанс',
+        ok2:'Все ОК',
+        checkedki:false,
+        checkedFSSP:false,
+        checkedDM: false
 
       }
       return {
@@ -70,6 +83,95 @@ const Mreducer = (state,action) => {
       return {
         ...state,
         array: [...action.value]
+      }
+    }
+    case 'setScoring': {
+
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el,toggle:!el.toggle}
+          }
+          return el
+        })
+      }
+  
+    }
+    case 'changeScoring': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, scoring:action.value}
+          }
+          return el
+        })
+      }
+  
+    }
+    case 'setProgram': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el,toggle2:!el.toggle2}
+          }
+          return el
+        })
+      }
+    }
+    case 'changeProgram': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, program:action.value}
+          }
+          return el
+        })
+      }
+  
+    }
+    case 'changeCheckedKI': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, checkedki:!el.checkedki}
+          }
+          return el
+        })
+      }
+    }
+    case 'changeCheckedFSSP': {
+      console.log('hi')
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, checkedFSSP:!el.checkedFSSP}
+          }
+          return el
+        })
+      }
+    }
+    case 'changeCheckedDM': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, checkedDM:!el.checkedDM}
+          }
+          return el
+        })
       }
     }
     default:
