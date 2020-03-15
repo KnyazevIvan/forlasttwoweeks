@@ -75,7 +75,7 @@ const Reestr = props => {
         <span className={`inputSpan${el.checkedTK ? '-active' : ''}`} onClick={() => dispatch({ type: 'changeCheckedTK', id: el.id })}>ТК &other</span>
         </div>
 
-      <div> <i onClick={() => dispatch({ type: 'deleteName', value: el.id })} className="material-icons">delete</i>
+      <div> <a onClick={() => dispatch({ type: 'deleteName', value: el.id })} class="waves-effect waves-light btn">X</a>
       </div>
 
     </div>)
