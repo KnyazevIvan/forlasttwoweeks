@@ -10,29 +10,11 @@ function App() {
 
 
 
-const initialState = {array:[{name:'Примеров Пример Примерович', toggle:false, id:0,scoring:'Скоринг', fps:'FPS',ok: 'Всё OK',qcc:'QCC2',ki:'Нет КИ', toggle2:false, ok2:'Все ОК',refinance:'Рефинанс', program:'Программа'}], inputValue:'', checkedki:false, checkedFSSP:false, checkedDM:false}
-
-
-
-
-
-
-
-
-
-
+const initialState = {array:[{name:'Примеров Пример Примерович', toggle:false, id:0,scoring:'Скоринг', fps:'FPS',ok: 'Всё OK',qcc:'QCC2',ki:'Нет КИ', toggle2:false, ok2:'Все ОК',refinance:'Рефинанс', program:'Программа'}], inputValue:'', checkedki:false, checkedFSSP:false, checkedDM:false, checkedNDFL: false, checkedPP:false, checkedTK: false}
 
 
 
 const Mreducer = (state,action) => {
-
-
-
- 
-
-
-
-
 
 
   switch (action.type){
