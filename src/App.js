@@ -10,7 +10,7 @@ function App() {
 
 
 
-const initialState = {array:[{name:'', toggle:false, id:0,scoring:'Скоринг', fps:'FPS',ok: 'Всё OK',qcc:'QCC2',ki:'Нет КИ', toggle2:false, ok2:'Все ОК',refinance:'Рефинанс', program:'Программа'}], inputValue:'', checkedki:false, checkedFSSP:false, checkedDM:false}
+const initialState = {array:[{name:'Примеров Пример Примерович', toggle:false, id:0,scoring:'Скоринг', fps:'FPS',ok: 'Всё OK',qcc:'QCC2',ki:'Нет КИ', toggle2:false, ok2:'Все ОК',refinance:'Рефинанс', program:'Программа'}], inputValue:'', checkedki:false, checkedFSSP:false, checkedDM:false}
 
 
 
@@ -222,24 +222,31 @@ const Mreducer = (state,action) => {
 const [state, dispatch] = useReducer(Mreducer, initialState)
 
 
+ 
 useEffect(()=> {
 
   const raw = localStorage.getItem('array')
   console.log(JSON.parse(raw))
+  if (raw)
+  {
   dispatch({type:'setState', value:JSON.parse(raw)})
+  }
 },[])
-
-
 
 
  useEffect(()=> {
   console.log(state.array)
+
 localStorage.setItem('array',JSON.stringify(state.array))
+
 },[state.array]
 )
 
 
+ 
 
+
+ 
 
 
 
