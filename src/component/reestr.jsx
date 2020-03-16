@@ -20,7 +20,7 @@ const Reestr = props => {
 
 
   let newarry = state.array.map(el =>
-    <div className={`block${el.checkedki & el.checkedDM & el.checkedFSSP & el.checkedNDFL & el.checkedTK & el.checkedPP & el.checkedAK & el.checkedref ? ' active' : ''}`}>
+    <div className={`block${el.checkedki & el.checkedDM & el.checkedFSSP & el.checkedNDFL & el.checkedTK & el.checkedPP & el.checkedAK &  el.checkedref==el.refadd ? ' active' : ''}`}>
 
       <div><span>   {el.name} </span> </div>
       <div className='wrapper'>

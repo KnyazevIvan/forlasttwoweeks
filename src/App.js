@@ -121,7 +121,7 @@ const Mreducer = (state,action) => {
         array: state.array.map(el=>{
           if (el.id===action.id)
           {
-            return {...el, program:action.value, refadd:action.toggle}
+            return {...el, program:action.value, checkedref:false , refadd:action.toggle}
           }
           return el
         })
