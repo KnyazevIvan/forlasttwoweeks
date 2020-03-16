@@ -1,14 +1,17 @@
 .App {
   text-align: center;
 }
+span {
+  font-size: 14px;
+}
 .container {
   
   margin-top: 100px;
   width: 800px;
 }
 .block {
-  right: 17%;
-  width: 134%;
+  right: 22%;
+  width: 144%;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -27,6 +30,7 @@
 }
 .block span {
   margin-left: 5px;
+  font-size: 1.05rem;
 }
 .active span {
 

@@ -10,7 +10,7 @@ function App() {
 
 
 
-const initialState = {array:[{name:'Примеров Пример Примерович', toggle:false, id:0,scoring:'Скоринг', fps:'FPS',ok: 'Всё OK',qcc:'QCC2',ki:'Нет КИ', toggle2:false, ok2:'Все ОК',refinance:'Рефинанс', program:'Программа'}], inputValue:'', checkedki:false, checkedFSSP:false, checkedDM:false, checkedNDFL: false, checkedPP:false, checkedTK: false}
+const initialState = {array:[{name:'Примеров Пример Примерович', toggle:false, id:0,scoring:'Скоринг', fps:'FPS',ok: 'Всё OK',qcc:'QCC2',ki:'Нет КИ', toggle2:false, ok2:'Все ОК',refinance:'Рефинанс', program:'Программа'}], inputValue:'', checkedki:false, checkedFSSP:false, checkedDM:false, checkedNDFL: false, checkedPP:false, checkedTK: false, checkedAK: false}
 
 
 
@@ -45,7 +45,12 @@ const Mreducer = (state,action) => {
         checkedDM: false,
         checkedPP: false,
         checkedNDFL: false,
-        checkedTK: false
+        checkedTK: false,
+        checkedAK: false,
+        checkedref: false,
+        refadd: false,
+
+    
 
       }
       return {
@@ -70,8 +75,22 @@ const Mreducer = (state,action) => {
         array: [...action.value]
       }
     }
-    case 'setScoring': {
+   
+    case 'changeScoring': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, scoring:action.value, style: action.style}
+          }
+          return el
+        })
+      }
+  
+    }
 
+    case 'setScoring': {
       return {
         ...state,
         array: state.array.map(el=>{
@@ -84,26 +103,13 @@ const Mreducer = (state,action) => {
       }
   
     }
-    case 'changeScoring': {
-      return {
-        ...state,
-        array: state.array.map(el=>{
-          if (el.id===action.id)
-          {
-            return {...el, scoring:action.value}
-          }
-          return el
-        })
-      }
-  
-    }
     case 'setProgram': {
       return {
         ...state,
         array: state.array.map(el=>{
           if (el.id===action.id)
           {
-            return {...el,toggle2:!el.toggle2, toggle:false}
+            return {...el,toggle2:!el.toggle2, toggle:false, style: {backgroundColor:'white'}}
           }
           return {...el, toggle:false, toggle2:false}
         })
@@ -115,7 +121,7 @@ const Mreducer = (state,action) => {
         array: state.array.map(el=>{
           if (el.id===action.id)
           {
-            return {...el, program:action.value}
+            return {...el, program:action.value, refadd:action.toggle}
           }
           return el
         })
@@ -190,6 +196,30 @@ const Mreducer = (state,action) => {
           if (el.id===action.id)
           {
             return {...el, checkedTK:!el.checkedTK}
+          }
+          return el
+        })
+      }
+    }
+    case 'changeCheckedAK': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, checkedAK:!el.checkedAK}
+          }
+          return el
+        })
+      }
+    }
+    case 'changeCheckedRef': {
+      return {
+        ...state,
+        array: state.array.map(el=>{
+          if (el.id===action.id)
+          {
+            return {...el, checkedref:!el.checkedref}
           }
           return el
         })
