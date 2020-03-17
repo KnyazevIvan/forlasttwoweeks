@@ -99,8 +99,9 @@ const Reestr = props => {
     <div className='container'>
       <input onKeyPress={addName} onChange={e => dispatch({ type: 'insertInputValue', value: e.target.value })} placeholder='Введите ФИО заемщика' value={state.inputValue} />
 
+    <div className='reverse'>
       {newarry}
-
+      </div>
     </div>
   )
 }

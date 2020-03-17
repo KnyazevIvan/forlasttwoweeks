@@ -7,13 +7,16 @@ span {
 .container {
   
   margin-top: 100px;
-  width: 800px;
+  width: 1200px;
 }
 .block {
-  right: 22%;
-  width: 144%;
+
+  
+  width: 184%;
+
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   background-color: #f5f5f5;
   height: 45px;
@@ -131,4 +134,8 @@ span {
 a {
   margin-right: 10px;
 
+}
+.reverse {
+ display: flex;
+  flex-wrap: wrap-reverse;
 }
